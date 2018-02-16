@@ -2,11 +2,14 @@
   "name": "@kleap/react-notification-list",
   "version": "0.0.3",
   "description": "",
+  "homepage": "http://kleap.github.io/react-notification-list",
   "main": "lib/index.js",
   "scripts": {
     "start:example": "cd example && webpack-dev-server --open",
     "build": "nwb build --copy-files",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "cd example && npm run build",
+    "deploy": "cd example && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +33,7 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "gh-pages": "^1.1.0",
     "jest": "^22.2.2",
     "node-sass": "^4.7.2",
     "nwb": "^0.21.5",

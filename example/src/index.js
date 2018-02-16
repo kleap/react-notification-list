@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import { createStore, compose, bindActionCreators } from 'redux';
-import { WithLimit, NotificationList } from '@kleap/react-notification-list';
+import { WithLimit, NotificationListInformative } from '@kleap/react-notification-list';
 import NotificationDispatcher from './NotificationDispatcher';
 
 function counter(state, action) {
@@ -27,7 +27,7 @@ function showNotification(item) {
   return { type: 'SHOW_NOTIFICATION', item: { ...item, id: Date.now().toString() } };
 }
 
-const LimitedNotificationList = WithLimit(NotificationList, { limit: 3 });
+const LimitedNotificationList = WithLimit(NotificationListInformative, { limit: 3 });
 
 const NotificationContainer = connect(state => ({
   items: state,
