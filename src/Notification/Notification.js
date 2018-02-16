@@ -36,7 +36,7 @@ const Notification = props => (
       })}
       >{(props.header || normalizeTypeToHeader(props.type)) + props.id}
       </span>
-      <span className="notification__message">{props.message}</span>
+      <p className="notification__message">{props.message}</p>
     </div>
   </section>
 );

@@ -2,7 +2,7 @@ $backgroundColor: #f7f7f7;
 $errorColor: #f05a5c;
 $warnColor: #f4db05;
 $successColor: #badc52;
-$textColor : #a0a0a0;
+$textColor: #a0a0a0;
 .notification {
     position: relative;
     z-index: 999;
@@ -60,6 +60,7 @@ $textColor : #a0a0a0;
         }
     }
     &__message {
+        margin: 0;
         font-size: smaller;
         color: $textColor;
     }

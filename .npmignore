@@ -1,0 +1,7 @@
+node_modules/
+example/
+webpack.config.js/
+__mocks__/
+.babelrc
+.eslint*
+package-lock.json
