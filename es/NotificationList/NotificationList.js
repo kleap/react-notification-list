@@ -1,29 +1,6 @@
-'use strict';
-
-exports.__esModule = true;
-exports.NotificationList = undefined;
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _class, _temp;
-
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _Notification = require('./../Notification');
-
-var _Notification2 = _interopRequireDefault(_Notification);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -31,7 +8,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var NotificationList = exports.NotificationList = (_temp = _class = function (_Component) {
+import _ from 'lodash';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Notification from './../Notification';
+
+export var NotificationList = (_temp = _class = function (_Component) {
   _inherits(NotificationList, _Component);
 
   function NotificationList(props) {
@@ -71,7 +53,7 @@ var NotificationList = exports.NotificationList = (_temp = _class = function (_C
     var items = nextProps.items;
     var olditems = this.props.items;
 
-    var difference = _lodash2.default.differenceBy(items, olditems, 'id');
+    var difference = _.differenceBy(items, olditems, 'id');
     difference.forEach(this.setTimer);
   };
 
@@ -79,10 +61,10 @@ var NotificationList = exports.NotificationList = (_temp = _class = function (_C
     var _this2 = this;
 
     var items = this.props.items.map(function (item) {
-      return _react2.default.createElement(_Notification2.default, _extends({ key: item[_this2.props.itemKey], close: _this2.onNotificationClose }, item));
+      return React.createElement(Notification, _extends({ key: item[_this2.props.itemKey], close: _this2.onNotificationClose }, item));
     });
 
-    return _react2.default.createElement(
+    return React.createElement(
       'div',
       { className: 'notification-list' },
       items
@@ -90,16 +72,17 @@ var NotificationList = exports.NotificationList = (_temp = _class = function (_C
   };
 
   return NotificationList;
-}(_react.Component), _class.defaultProps = {
+}(Component), _class.defaultProps = {
   onNotificationTimeout: undefined,
   itemKey: 'id',
   timeout: 3000
 }, _temp);
+
 NotificationList.propTypes = process.env.NODE_ENV !== "production" ? {
-  items: _propTypes2.default.arrayOf(Object).isRequired,
-  onNotificationClose: _propTypes2.default.func.isRequired,
-  onNotificationTimeout: _propTypes2.default.func,
-  timeout: _propTypes2.default.number,
-  itemKey: _propTypes2.default.string
+  items: PropTypes.arrayOf(Object).isRequired,
+  onNotificationClose: PropTypes.func.isRequired,
+  onNotificationTimeout: PropTypes.func,
+  timeout: PropTypes.number,
+  itemKey: PropTypes.string
 } : {};
-exports.default = NotificationList;
+export default NotificationList;

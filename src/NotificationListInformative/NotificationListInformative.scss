@@ -1,0 +1,14 @@
+$backgroundColor: #f7f7f7;
+$textColor: #a0a0a0;
+.notification-list-info {
+    position: fixed;
+    right: 10px;
+    top: 8px;
+    background-color: $backgroundColor;
+    padding: 5px;
+    color: darken($textColor, 20%);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14pt;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}

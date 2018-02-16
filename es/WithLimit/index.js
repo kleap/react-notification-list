@@ -1,18 +1,4 @@
-'use strict';
-
-exports.__esModule = true;
-
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20,7 +6,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-exports.default = function (Component, _ref) {
+import React from 'react';
+import PropTypes from 'prop-types';
+
+export default (function (Component, _ref) {
   var _class, _temp;
 
   var _ref$limit = _ref.limit,
@@ -64,18 +53,17 @@ exports.default = function (Component, _ref) {
     };
 
     _class.prototype.render = function render() {
-      return _react2.default.createElement(Component, _extends({}, this.props, { items: this.state.items, types: this.props.items.map(function (i) {
+      return React.createElement(Component, _extends({}, this.props, { items: this.state.items, types: this.props.items.map(function (i) {
           return i.type;
         }) }));
     };
 
     return _class;
-  }(_react2.default.Component), _class.propTypes = {
-    items: _propTypes2.default.arrayOf(Object).isRequired
+  }(React.Component), _class.propTypes = {
+    items: PropTypes.arrayOf(Object).isRequired
   }, _class.displayName = 'WithLimit' + getDisplayName(Component), _temp;
-};
+});
 
 function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component';
 }
-module.exports = exports['default'];
