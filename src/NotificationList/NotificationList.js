@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransitionGroup } from 'react-transition-group';
 import Notification from './../Notification';
 
 export class NotificationList extends Component {
@@ -37,7 +38,6 @@ export class NotificationList extends Component {
 
   onNotificationClose = (id) => {
     this.props.onNotificationClose(id);
-    clearTimeout(this.timers[id]);
   }
 
   onNotificationTimeout = (id) => {
@@ -55,12 +55,18 @@ export class NotificationList extends Component {
   }
 
   render() {
-    const items = this.props.items.map(item =>
-      <Notification key={item[this.props.itemKey]} close={this.onNotificationClose} {...item} />);
+    const items = this.props.items.map(item => (
+      <Notification key={item[this.props.itemKey]} close={this.onNotificationClose} {...item} />));
 
     return (
       <div className="notification-list">
-        {items}
+        <CSSTransitionGroup
+          transitionName="notification-item"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}
+        >
+          {items}
+        </CSSTransitionGroup>
       </div>);
   }
 }

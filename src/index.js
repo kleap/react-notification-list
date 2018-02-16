@@ -9,5 +9,5 @@ export default {
   Notification,
   NotificationList,
   NotificationListInformative,
-  WithLimit
-}
+  WithLimit,
+};

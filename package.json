@@ -41,6 +41,7 @@
     "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.1",
+    "webpack-dev-server": "^2.11.1",
     "webpack": "^3.11.0",
     "webpack-merge": "^4.1.1"
   },
@@ -49,7 +50,9 @@
     "lodash": "^4.17.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.2.0",
+    "react-transition-group": "^1.2.1"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/test/setup.js",

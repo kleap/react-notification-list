@@ -14,29 +14,15 @@ module.exports = {
     contentBase: path.join(__dirname, '/dist'),
     historyApiFallback: true,
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-    }),
-  ],
+  // plugins: [
+  //   new webpack.DefinePlugin({
+  //     'process.env.NODE_ENV': JSON.stringify('production'),
+  //   }),
+  //   new webpack.optimize.UglifyJsPlugin({
+  //     minimize: true,
+  //   }),
+  // ],
   module: {
-    loaders: [
-      {
-        test: /.js?$/,
-        loader: 'babel-loader',
-        include: path.join(__dirname, 'src'),
-        query: {
-          presets: ['es2015', 'react', 'stage-0'],
-        },
-      },
-      {
-        test: /\.css$/,
-        loader: 'css-loader',
-      },
-    ],
     rules: [
       {
         test: /\.scss$/,
@@ -51,7 +37,7 @@ module.exports = {
       {
         test: /.js?$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'src')],
+        include: [path.join(__dirname, 'src'), path.join(__dirname, './../src')],
         query: {
           presets: ['es2015', 'react', 'stage-0'],
         },

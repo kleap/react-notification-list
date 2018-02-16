@@ -36,8 +36,10 @@
   "dependencies": {
     "@kleap/react-notification-list": "^0.0.3",
     "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
+    "react-transition-group": "^2.2.1",
     "redux": "^3.7.2"
   }
 }
