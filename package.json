@@ -2,7 +2,7 @@
   "name": "@kleap/react-notification-list",
   "version": "0.0.2",
   "description": "",
-  "main": "build/react-notification-list.js",
+  "main": "build/index.js",
   "scripts": {
     "start:example": "cd example && webpack-dev-server --open",
     "build": "babel lib -d build",
