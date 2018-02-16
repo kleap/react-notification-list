@@ -1,6 +1,6 @@
 {
   "name": "@kleap/react-notification-list",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "build/react-notification-list.js",
   "scripts": {
