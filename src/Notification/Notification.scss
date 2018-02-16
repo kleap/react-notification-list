@@ -1,7 +1,8 @@
 $backgroundColor: #f7f7f7;
 $errorColor: #f05a5c;
 $warnColor: #f4db05;
-$okColor: #badc52;
+$successColor: #badc52;
+$textColor : #a0a0a0;
 .notification {
     position: relative;
     z-index: 999;
@@ -14,7 +15,7 @@ $okColor: #badc52;
     overflow-y: hidden;
     &__icon-container {
         width: 15%;
-        background-color: $okColor;
+        background-color: $successColor;
         text-align: center;
         padding-top: 16px;
         fill: rgba(0, 0, 0, 0.3);
@@ -26,7 +27,7 @@ $okColor: #badc52;
         }
     }
     &__header {
-        color: $okColor;
+        color: $successColor;
         font-size: 130%;
         font-weight: 200;
         line-height: 36px;
@@ -60,6 +61,6 @@ $okColor: #badc52;
     }
     &__message {
         font-size: smaller;
-        color: #a0a0a0;
+        color: $textColor;
     }
 }

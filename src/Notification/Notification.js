@@ -10,7 +10,7 @@ function normalizeTypeToHeader(type) {
 const icons = {
   error: 'cross',
   warn: 'warn',
-  ok: 'check',
+  success: 'check',
 };
 
 const Notification = props => (
@@ -24,7 +24,7 @@ const Notification = props => (
       [`notification__icon-container_${props.type}`]: !!props.type,
     })}
     >
-      <Icon icon={icons[props.type || 'ok']} md />
+      <Icon icon={icons[props.type || 'success']} md />
     </div>
     <div className="notification__content">
       <button className="notification__close-button" onClick={() => props.close(props.id)} >
@@ -49,7 +49,7 @@ Notification.propTypes = {
   type: PropTypes.string,
 };
 
-Notification.defaultProps = { header: '', message: '', type: 'ok' };
+Notification.defaultProps = { header: '', message: '', type: 'success' };
 
 
 export default Notification;

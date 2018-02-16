@@ -1,38 +1,14 @@
 $backgroundColor: #f7f7f7;
-$numberFont: 7pt;
-$numberBordersSize: 10pt;
+$textColor: #a0a0a0;
 .notification-list-info {
     position: fixed;
     right: 10px;
     top: 8px;
-    background-color: #797979;
-    padding: 3px;
+    background-color: $backgroundColor;
+    padding: 5px;
+    color: darken($textColor, 20%);
     border-radius: 4px;
-    font-family: sans-serif;
     text-align: center;
     font-size: 14pt;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-    
-    &__total {
-        padding: 3px;
-        color: #fafafa;
-        &::before {
-            content: "total"
-        }
-    }
-    &__total-value {
-        background-color: gold;
-        display: inline-block;
-        vertical-align: super;
-        width: $numberBordersSize;
-        border-radius: 30%;
-        line-height: $numberBordersSize;
-        font-size: $numberFont;
-    }
-    &__pending {
-        &::before {
-            content: "hidden"
-        }
-        background-color: red;
-    }
 }

@@ -31,7 +31,7 @@ class NotificationDispatcher extends React.Component {
         <select name="type" onChange={this.onChange} defaultValue={this.state.type}>
           <option>error</option>
           <option>warn</option>
-          <option>ok</option>
+          <option>success</option>
         </select>
         <button onClick={this.publish}>publish</button>
       </div>

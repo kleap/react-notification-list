@@ -36,7 +36,7 @@ export default (Component, { limit = 3 }) => class extends React.Component {
 
   render() {
     return (
-      <Component {...this.props} items={this.state.items} pending={this.state.pending} total={this.props.items.length} />);
+      <Component {...this.props} items={this.state.items} types={this.props.items.map(i => i.type)} />);
   }
 };
 
