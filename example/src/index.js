@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import { createStore, compose, bindActionCreators } from 'redux';
-import NotificationList from './../../src/NotificationListInformative/NotificationListInformative';
+import { WithLimit, NotificationList } from '@kleap/react-notification-list';
 import NotificationDispatcher from './NotificationDispatcher';
-import WithLimit from './../../src/WithLimit';
 
 function counter(state, action) {
   if (typeof state === 'undefined') {

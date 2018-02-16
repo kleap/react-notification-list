@@ -1,17 +1,12 @@
 {
-  "name": "react-notification-list",
+  "name": "@kleap/react-notification-list",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/react-notification-list.js",
+  "main": "build/react-notification-list.js",
   "scripts": {
     "start:example": "cd example && webpack-dev-server --open",
-    "build": "webpack",
+    "build": "babel lib -d build",
     "test": "jest"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
   },
   "keywords": [],
   "author": "",

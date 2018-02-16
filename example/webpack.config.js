@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     port: 5000,
-    contentBase: path.join(__dirname, '/example/dist'),
+    contentBase: path.join(__dirname, '/dist'),
     historyApiFallback: true,
   },
   module: {
@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /.js?$/,
         loader: 'babel-loader',
-        include: path.join(__dirname, 'example/src'),
+        include: path.join(__dirname, 'src'),
         query: {
           presets: ['es2015', 'react', 'stage-0'],
         },
@@ -43,7 +43,7 @@ module.exports = {
       {
         test: /.js?$/,
         loader: 'babel-loader',
-        include: [path.join(__dirname, 'example/src'), path.join(__dirname, 'src')],
+        include: [path.join(__dirname, 'src')],
         query: {
           presets: ['es2015', 'react', 'stage-0'],
         },

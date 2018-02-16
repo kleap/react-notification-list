@@ -2,12 +2,21 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  context: path.resolve(__dirname, 'example/src/'),
-  entry: './index.js',
+  context: path.resolve(__dirname, 'src/'),
+  entry: {
+    'react-notification-list': './index.js',
+    'react-notification-list.min': './index.js',
+  },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'react-notification-list.js',
+    filename: '[name].js',
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.min\.js$/,
+      minimize: true,
+    }),
+  ],
   module: {
     rules: [
       {
